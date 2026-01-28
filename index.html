@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Code Generator</title>
+  <style>
+    body{
+      background:#020617;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      font-family:Arial;
+    }
+
+    #back{
+      width:300px;
+      background:#0B1220;
+      padding:15px;
+      border-radius:12px;
+      box-shadow: 0 10px 30px rgba(0, 229, 255, 0.35);
+      text-align:center;
+    }
+
+    #input{
+      width:90%;
+      height:30px;
+      border-radius:6px;
+      border:none;
+      outline:none;
+      padding:5px;
+      margin-bottom:10px;
+      position:relative;
+      top:-1cm;
+    }
+
+    #btn{
+      padding:6px 15px;
+      border:none;
+      border-radius:6px;
+      background:#00E5FF;
+      color:#000;
+      font-weight:bold;
+      cursor:pointer;
+      position:relative;
+      top:;
+    }
+
+    #img{
+      display:block;
+      margin:10px auto;
+      border-radius: 2px;
+    }
+    h1{
+      position:relative;
+      top:-0.8cm;
+     color:#fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="back">
+    <h1> Qr corde Generater</h1>
+    <input type="text" placeholder="Enter text or link" id="input">
+    <img id="img">
+    <button id="btn" onclick="n1()">Generate</button>
+  </div>
+
+  <script>
+    function n1(){
+      var input = document.getElementById("input").value;
+      var img = document.getElementById("img");
+      img.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(input);
+    }
+  </script>
+
+</body>
+</html>
